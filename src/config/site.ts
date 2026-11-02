@@ -21,6 +21,9 @@ export const company = {
   whatsappNumber: '5541987147142',
   email: 'zancavolt@gmail.com',
   region: 'São José dos Pinhais, Curitiba e Região Metropolitana - PR',
+  // Cidade-base para os dados estruturados (sem rua: o atendimento é no local do cliente).
+  city: 'São José dos Pinhais',
+  state: 'PR',
   // Vazio enquanto a empresa não tem CNPJ: o rodapé só mostra a linha quando houver número.
   cnpj: '',
   social: {

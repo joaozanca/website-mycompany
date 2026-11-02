@@ -9,10 +9,12 @@ import { Services } from '@/components/sections/services'
 import { SiteFooter } from '@/components/layout/site-footer'
 import { SiteHeader } from '@/components/layout/site-header'
 import { WhatsAppFloat } from '@/components/layout/whatsapp-float'
+import { LocalBusinessJsonLd } from '@/components/seo/local-business-json-ld'
 
 export default function Page() {
   return (
     <>
+      <LocalBusinessJsonLd />
       <SiteHeader />
       <main>
         <Hero />

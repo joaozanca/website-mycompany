@@ -3,3 +3,10 @@
 [build]
   command = "npm run build"
   publish = "out"
+
+# O endereço da Netlify leva para o domínio, para o Google não ver duas cópias do site (ZV-34).
+[[redirects]]
+  from = "https://website-zancavolt.netlify.app/*"
+  to = "https://zancavolt.com.br/:splat"
+  status = 301
+  force = true
