@@ -1,12 +1,19 @@
 import type { Metadata, Viewport } from 'next'
-import { Inter, Montserrat } from 'next/font/google'
+import localFont from 'next/font/local'
 import { company } from '@/config/site'
 import './globals.css'
 
-const inter = Inter({ subsets: ['latin'], variable: '--font-inter', display: 'swap' })
-const montserrat = Montserrat({
-  subsets: ['latin'],
-  weight: ['600', '700', '800'],
+// Fontes guardadas no repositório (subconjunto latin do Google Fonts, licença OFL em ./fonts): o build
+// não depende de baixar do Google Fonts, que às vezes falhava na Netlify e no GitHub Actions (ZV-42).
+const inter = localFont({
+  src: './fonts/inter-latin.woff2',
+  weight: '100 900',
+  variable: '--font-inter',
+  display: 'swap',
+})
+const montserrat = localFont({
+  src: './fonts/montserrat-latin.woff2',
+  weight: '600 800',
   variable: '--font-montserrat',
   display: 'swap',
 })
