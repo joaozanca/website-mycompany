@@ -10,3 +10,19 @@
   to = "https://zancavolt.com.br/:splat"
   status = 301
   force = true
+
+# Cabeçalhos de segurança em todas as respostas do site (ZV-36).
+# - HSTS: o navegador só acessa por HTTPS, também nos subdomínios (www). Sem "preload": entrar na lista
+#   de pré-carga dos navegadores é difícil de desfazer.
+# - CSP mínima: não restringe scripts nem estilos (fora do escopo); só impede o site de ser aberto
+#   dentro de outros sites e bloqueia plugins e troca da base dos links.
+# - Sem Cross-Origin-Opener-Policy: o formulário usa window.open para abrir o WhatsApp e confere a aba aberta.
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains"
+    Content-Security-Policy = "frame-ancestors 'none'; base-uri 'self'; object-src 'none'; form-action 'self'"
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=(), payment=(), usb=()"
