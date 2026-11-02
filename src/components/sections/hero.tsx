@@ -10,7 +10,7 @@ export function Hero() {
   return (
     <section id="inicio" aria-labelledby="hero-title" className="relative isolate overflow-hidden bg-ink pt-18">
       <Image
-        src="/images/hero-painel.png"
+        src="/images/hero-painel.webp"
         alt="Técnico montando um painel elétrico industrial"
         fill
         priority

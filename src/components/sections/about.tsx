@@ -11,7 +11,7 @@ export function About() {
         <div className="relative">
           <div className="relative aspect-[4/5] overflow-hidden rounded-2xl shadow-xl shadow-ink-shadow/10 sm:aspect-[4/3] lg:aspect-[4/5]">
             <Image
-              src="/images/sobre-equipe.png"
+              src="/images/sobre-equipe.webp"
               alt="Eletricistas da ZancaVolt inspecionando um quadro de distribuição"
               fill
               sizes="(min-width: 1024px) 50vw, 100vw"
