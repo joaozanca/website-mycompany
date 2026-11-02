@@ -1,6 +1,6 @@
 'use client'
 
-import { CheckCircle2, ChevronDown, Send } from 'lucide-react'
+import { CheckCircle2, ChevronDown, LockKeyhole, Send } from 'lucide-react'
 import { useState, type FormEvent, type ReactNode } from 'react'
 import { actionVariants } from '@/components/ui/action-link'
 import { services, whatsappLink } from '@/config/site'
@@ -212,6 +212,14 @@ export function ContactForm() {
         ) : (
           'Ao enviar, sua solicitação é encaminhada para o nosso WhatsApp.'
         )}
+      </p>
+
+      {/* Aviso de privacidade (LGPD): fica sempre visível, mesmo depois do envio (ZV-39). */}
+      <p className="flex items-start justify-center gap-1.5 text-center text-sm text-muted-foreground">
+        <LockKeyhole className="mt-0.5 size-4 shrink-0" aria-hidden="true" />
+        <span>
+          Seus dados não ficam guardados no site: são usados só para montar a mensagem do WhatsApp para a ZancaVolt.
+        </span>
       </p>
     </form>
   )
