@@ -18,6 +18,8 @@ const siteUrl =
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
+  // Endereço oficial da página, também nos previews e em website-zancavolt.netlify.app (ZV-34).
+  alternates: { canonical: `${company.siteUrl}/` },
   title: 'ZancaVolt | Elétrica, Segurança Eletrônica e Ar Comprimido',
   description:
     'Instalação, montagem e manutenção elétrica, painéis, CFTV, alarmes, cerca elétrica e tubulação de ar comprimido em PPR para indústrias, comércios, condomínios e residências. Solicite seu orçamento.',
