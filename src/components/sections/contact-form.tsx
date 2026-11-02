@@ -215,11 +215,10 @@ export function ContactForm() {
       </p>
 
       {/* Aviso de privacidade (LGPD): fica sempre visível, mesmo depois do envio (ZV-39). */}
-      <p className="flex items-start justify-center gap-1.5 text-center text-sm text-muted-foreground">
-        <LockKeyhole className="mt-0.5 size-4 shrink-0" aria-hidden="true" />
-        <span>
-          Seus dados não ficam guardados no site: são usados só para montar a mensagem do WhatsApp para a ZancaVolt.
-        </span>
+      {/* Cadeado dentro da linha de texto, para ficar junto da primeira palavra em qualquer largura. */}
+      <p className="text-center text-sm text-muted-foreground">
+        <LockKeyhole className="mr-1.5 inline size-4 align-[-0.15em]" aria-hidden="true" />
+        Seus dados não ficam guardados no site: são usados só para montar a mensagem do WhatsApp para a ZancaVolt.
       </p>
     </form>
   )
