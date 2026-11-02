@@ -10,37 +10,37 @@ type Category = (typeof categories)[number]
 
 const projects: { src: string; title: string; category: Exclude<Category, 'Todos'>; place: string }[] = [
   {
-    src: '/images/projeto-eletrica.png',
+    src: '/images/projeto-eletrica.webp',
     title: 'Infraestrutura com eletrocalhas',
     category: 'Elétrica',
     place: 'Centro comercial',
   },
   {
-    src: '/images/projeto-painel.png',
+    src: '/images/projeto-painel.webp',
     title: 'Painel de comando industrial',
     category: 'Painéis',
     place: 'Indústria metalúrgica',
   },
   {
-    src: '/images/projeto-cftv.png',
+    src: '/images/projeto-cftv.webp',
     title: 'Sistema de CFTV completo',
     category: 'Segurança',
     place: 'Condomínio residencial',
   },
   {
-    src: '/images/projeto-ar.png',
+    src: '/images/projeto-ar.webp',
     title: 'Rede de ar comprimido em PPR',
     category: 'Ar comprimido',
     place: 'Linha de produção',
   },
   {
-    src: '/images/projeto-alarme.png',
+    src: '/images/projeto-alarme.webp',
     title: 'Cerca elétrica e alarme',
     category: 'Segurança',
     place: 'Residência',
   },
   {
-    src: '/images/projeto-quadro.png',
+    src: '/images/projeto-quadro.webp',
     title: 'Manutenção de quadro de distribuição',
     category: 'Elétrica',
     place: 'Residência',
