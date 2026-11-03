@@ -11,7 +11,7 @@ TENTATIVAS=40 # 40 × 15 s = 10 minutos
 for i in $(seq 1 "$TENTATIVAS"); do
   # "?v=" evita receber uma cópia antiga guardada no caminho.
   VERSAO=$(curl -fsSL "$URL/?v=$SHA-$i" | grep -o 'name="zv-versao" content="[^"]*"' | sed 's/.*content="//; s/"$//' || true)
-  if [ "$VERSAO" = "$SHA" ]; then
+  if [[ "$VERSAO" == "$SHA" ]]; then
     echo "Commit $SHA publicado em $URL."
     exit 0
   fi
