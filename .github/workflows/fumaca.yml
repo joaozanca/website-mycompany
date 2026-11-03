@@ -1,0 +1,56 @@
+# Teste de fumaça do site no ar (ZV-37): a cada merge na main, espera a Netlify publicar o commit em
+# zancavolt.com.br e roda tests/smoke contra o domínio. Se falhar, o commit da main fica com check vermelho.
+name: Fumaça em produção
+
+on:
+  push:
+    branches: [main]
+  # Permite rodar à mão pela aba Actions (ex.: depois de um deploy manual).
+  workflow_dispatch:
+
+concurrency:
+  group: fumaca-producao
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  fumaca:
+    name: Teste de fumaça em zancavolt.com.br
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - name: Instalar dependências
+        run: npm ci --ignore-scripts
+
+      - name: Instalar o navegador do Playwright
+        run: npm run test:e2e:install
+
+      - name: Aguardar a publicação na Netlify
+        env:
+          SHA: ${{ github.sha }}
+        run: bash scripts/ci/aguardar-producao.sh "$SHA"
+
+      - name: Rodar o teste de fumaça
+        env:
+          BASE_URL: https://zancavolt.com.br
+        # Usa o Playwright já instalado pelo npm ci (npx poderia baixar outro pacote).
+        run: npm run test:e2e -- tests/smoke
+
+      - name: Guardar o relatório
+        if: ${{ !cancelled() }}
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: relatorio-fumaca
+          path: playwright-report/
+          retention-days: 14
