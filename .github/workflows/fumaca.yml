@@ -44,7 +44,8 @@ jobs:
       - name: Rodar o teste de fumaça
         env:
           BASE_URL: https://zancavolt.com.br
-        run: npx playwright test tests/smoke
+        # Usa o Playwright já instalado pelo npm ci (npx poderia baixar outro pacote).
+        run: npm run test:e2e -- tests/smoke
 
       - name: Guardar o relatório
         if: ${{ !cancelled() }}
