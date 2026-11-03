@@ -48,6 +48,9 @@ export const metadata: Metadata = {
     type: 'website',
     siteName: 'ZancaVolt',
   },
+  // Versão publicada: o commit que a Netlify usou no build. O teste de fumaça espera esta versão entrar
+  // no ar antes de rodar (ZV-37).
+  other: { 'zv-versao': process.env.COMMIT_REF ?? 'local' },
   // Nome do atalho ao adicionar o site à tela inicial do iPhone.
   appleWebApp: { title: 'ZancaVolt' },
   icons: {
