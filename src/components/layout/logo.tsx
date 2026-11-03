@@ -1,8 +1,9 @@
 import { cn } from '@/lib/utils'
 
-export function Logo({ className }: { className?: string }) {
+// href: na página inicial a logo volta ao topo (#inicio); em outras páginas leva para "/".
+export function Logo({ className, href = '#inicio' }: { className?: string; href?: string }) {
   return (
-    <a href="#inicio" className={cn('inline-flex items-center gap-2', className)} aria-label="ZancaVolt - Início">
+    <a href={href} className={cn('inline-flex items-center gap-2', className)} aria-label="ZancaVolt - Início">
       {/* Logo oficial da ZancaVolt (mesmo desenho de public/icon.svg). */}
       <svg viewBox="0 0 64 64" className="size-8 shrink-0" aria-hidden="true">
         <rect width="64" height="64" rx="14" className="fill-primary" />
