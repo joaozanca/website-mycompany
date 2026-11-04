@@ -26,10 +26,11 @@ export const company = {
   state: 'PR',
   // Vazio enquanto a empresa não tem CNPJ: o rodapé só mostra a linha quando houver número.
   cnpj: '',
+  // Perfis reais da empresa. Deixe vazio ('') para a rede não aparecer no rodapé (ZV-43).
   social: {
-    instagram: 'https://instagram.com/',
-    facebook: 'https://facebook.com/',
-    linkedin: 'https://linkedin.com/',
+    instagram: 'https://www.instagram.com/zanca_volt/',
+    facebook: 'https://www.facebook.com/zancavolt',
+    linkedin: 'https://www.linkedin.com/company/zancavolt',
   },
 }
 
