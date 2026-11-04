@@ -89,8 +89,10 @@ jobs:
       - uses: lycheeverse/lychee-action@e7477775783ea5526144ba13e8db5eec57747ce8 # v2.9.0
         with:
           # Confere links internos, imagens, âncoras (#secao) e links externos do site gerado.
+          # O Instagram responde 429 para robôs vindos dos servidores do GitHub, mesmo com o perfil no ar (ZV-43).
           args: >-
             --no-progress
+            --exclude '^https://www.instagram.com/'
             --root-dir ${{ github.workspace }}/out
             --include-fragments
             'out/**/*.html'
