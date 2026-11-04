@@ -11,8 +11,9 @@ const telas = [
   { nome: 'celular', width: 375, height: 812 },
 ]
 
-// Até 0,1% dos pixels pode mudar por pequenas variações de desenho.
-const opcoes = { animations: 'disabled', maxDiffPixelRatio: 0.001 } as const
+// Até 50 pixels podem mudar por print, em número fixo: uma porcentagem deixaria passar mudanças pequenas
+// nas prints grandes, como a cor do Z da logo (ZV-48).
+const opcoes = { animations: 'disabled', maxDiffPixels: 50 } as const
 
 async function esconderHospedagem(page: Page) {
   // Barra do preview e selo "Powered by Netlify": vêm da hospedagem e não fazem parte do site.
