@@ -6,7 +6,7 @@ const socials = [
   { label: 'Instagram', href: company.social.instagram, Icon: InstagramIcon },
   { label: 'Facebook', href: company.social.facebook, Icon: FacebookIcon },
   { label: 'LinkedIn', href: company.social.linkedin, Icon: LinkedInIcon },
-]
+].filter((social) => social.href)
 
 export function SiteFooter() {
   return (
@@ -25,7 +25,7 @@ export function SiteFooter() {
                   href={href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label={label}
+                  aria-label={`${label} da ZancaVolt`}
                   className="flex size-10 items-center justify-center rounded-lg border border-ink-border text-ink-foreground transition-colors hover:border-primary hover:bg-primary hover:text-primary-foreground"
                 >
                   <Icon className="size-4" />
