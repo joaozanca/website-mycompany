@@ -149,7 +149,8 @@ jobs:
         # mudança visual é desejada (como aprovar: README, "Regressão visual").
         if: ${{ failure() && github.event_name == 'pull_request' }}
         continue-on-error: true
-        run: npm run test:e2e -- tests/visual --update-snapshots=all
+        # --reporter=line: não sobrescreve o relatório HTML da falha, que guarda antes, depois e diferença.
+        run: npm run test:e2e -- tests/visual --update-snapshots=all --reporter=line
 
       - name: Guardar as prints novas
         if: ${{ failure() && github.event_name == 'pull_request' }}
