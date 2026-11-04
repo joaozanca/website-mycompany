@@ -64,7 +64,7 @@
   --ink-border: rgb(148 163 184 / 0.18);
 
   /* Raio da logo (preto puro, como no arquivo oficial da marca) */
-  --logo-mark: #2563eb;
+  --logo-mark: #000000;
 
   /* Cor oficial da marca WhatsApp */
   --whatsapp: #25d366;
