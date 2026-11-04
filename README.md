@@ -44,6 +44,16 @@ npm run test:e2e       # Playwright (pasta tests/); sobe o build local com npm s
 
 Para rodar contra outro endereço (ex.: um preview), defina `BASE_URL`.
 
+#### Regressão visual
+
+Os testes de `tests/visual` comparam prints do site em 1280, 768 e 375 px com as referências de `tests/visual/referencias`. Eles rodam só na CI (Linux), porque cada sistema desenha as letras de um jeito.
+
+Quando uma mudança visual for desejada, a CI fica vermelha e guarda as prints novas no artefato `referencias-visuais-novas`:
+
+1. Confira as diferenças no artefato `relatorio-playwright`.
+2. Baixe `referencias-visuais-novas` e substitua os arquivos de `tests/visual/referencias`.
+3. Faça o commit no mesmo PR. A CI roda de novo com as referências aprovadas.
+
 ### Esteira de CI
 
 Todo Pull Request para a `main` passa pelo GitHub Actions ([.github/workflows/ci.yml](.github/workflows/ci.yml)):
