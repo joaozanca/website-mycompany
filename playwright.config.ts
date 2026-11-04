@@ -7,6 +7,8 @@ const isLocal = !process.env.BASE_URL
 
 export default defineConfig({
   testDir: './tests',
+  // Referências da regressão visual (ZV-48): um nome só, sem separar por sistema.
+  snapshotPathTemplate: '{testDir}/visual/referencias/{arg}{ext}',
   fullyParallel: true,
   forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 1 : 0,
