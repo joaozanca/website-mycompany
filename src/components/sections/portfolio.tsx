@@ -17,9 +17,9 @@ const projects: { src: string; title: string; category: Exclude<Category, 'Todos
   },
   {
     src: '/images/projeto-painel.webp',
-    title: 'Painel de comando industrial',
+    title: 'Painéis elétricos sob medida',
     category: 'Painéis',
-    place: 'Indústria metalúrgica',
+    place: 'Máquinas, indústrias e veículos especiais',
   },
   {
     src: '/images/projeto-cftv.webp',
