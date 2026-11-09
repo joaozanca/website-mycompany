@@ -1,10 +1,11 @@
-# Teste de fumaça do site no ar (ZV-37): a cada merge na main, espera a Netlify publicar o commit em
-# zancavolt.com.br e roda tests/smoke contra o domínio. Se falhar, o commit da main fica com check vermelho.
+# Teste de fumaça do site no ar (ZV-37): a cada publicação (merge na branch producao, ZV-50), espera a
+# Netlify publicar o commit em zancavolt.com.br e roda tests/smoke contra o domínio. Se falhar, o commit
+# da producao fica com check vermelho.
 name: Fumaça em produção
 
 on:
   push:
-    branches: [main]
+    branches: [producao]
   # Permite rodar à mão pela aba Actions (ex.: depois de um deploy manual).
   workflow_dispatch:
 
