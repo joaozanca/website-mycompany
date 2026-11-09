@@ -25,7 +25,7 @@ O projeto foi conduzido como um time de verdade, em **6 sprints com Scrum, Jira 
 | Sprints | 6 (Sprint 0 a 5), de 15/10 a 16/11/2026 |
 | Pull Requests | Mais de 40, todos com CI, preview e aprovação do QA |
 | Testes automatizados | **23 em todo PR** (4 E2E, 8 de acessibilidade, 3 de fumaça e 8 de regressão visual) + 3 de fumaça contra o site no ar a cada publicação |
-| Casos de teste manuais | ZV-T1 a ZV-T95 no Zephyr Scale, em 6 ciclos (um por sprint) |
+| Casos de teste manuais | **96** no Zephyr Scale (ZV-T1 a ZV-T96), em 6 ciclos (um por sprint) |
 | Bugs registrados | 4 no Jira, todos com decisão registrada; outros achados corrigidos no próprio card |
 | Performance no celular | Lighthouse **93** (era 75) |
 | Segurança | Nota **A+** no securityheaders.com |

@@ -19,7 +19,7 @@ O desafio de qualidade: um site pequeno, mas que **não pode errar no contato**.
 ## Meu papel
 
 - Defini o escopo das sprints e **aprovei os critérios de aceite** de cada card na Planning.
-- Montei e executei os **casos de teste no Zephyr Scale** (ZV-T1 a ZV-T95), com um ciclo por sprint e evidências em cada passo. Os rascunhos dos casos foram redigidos com apoio da IA; a definição do que testar, a execução e o julgamento foram meus.
+- Montei e executei os **casos de teste no Zephyr Scale** (96 casos, ZV-T1 a ZV-T96), com um ciclo por sprint e evidências em cada passo. Os rascunhos dos casos foram redigidos com apoio da IA; a definição do que testar, a execução e o julgamento foram meus.
 - Testei em **aparelhos reais** (iPhone e dois celulares Samsung) além do navegador.
 - Registrei **bugs** no Jira, decidi a prioridade e fiz o reteste.
 - **Aprovei ou reprovei** cada entrega antes do merge.

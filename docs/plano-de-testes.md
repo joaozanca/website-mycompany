@@ -170,7 +170,7 @@ A aprovação de uma entrega é sempre do QA. Neste projeto, o DEV é uma IA (Cl
 
 - **6 sprints** (Sprint 0 a Sprint 5), de 15/10 a 16/11/2026.
 - **23 testes automatizados** em todo PR e **3 de fumaça** em produção a cada publicação.
-- Casos de teste manuais no Zephyr: ZV-T1 a ZV-T95, organizados em ciclos por sprint (ZV-R1 a ZV-R6).
+- **96 casos de teste manuais** no Zephyr (ZV-T1 a ZV-T96), organizados em ciclos por sprint (ZV-R1 a ZV-R6).
 - **4 bugs registrados no Jira:** ZV-12 (tag original), ZV-21 (contraste), ZV-23 (emoji no WhatsApp) e ZV-42 (build ao baixar a fonte). Outros achados foram corrigidos no próprio card, com registro na execução.
 - Lighthouse no celular: Performance **93**; securityheaders.com: **A+**.
 
