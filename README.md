@@ -8,7 +8,7 @@ Site real da **ZancaVolt**, empresa de serviços elétricos, segurança eletrôn
 
 O projeto foi conduzido como um time de verdade, em **6 sprints com Scrum, Jira e Zephyr Scale**, e é o meu projeto de portfólio como **QA**: planejei e executei os testes, registrei bugs, aprovei ou reprovei cada entrega e defini os testes automatizados que protegem o site em todo Pull Request.
 
-📄 **[Plano de Testes](docs/plano-de-testes.md)** · 🌐 **[Site no ar](https://zancavolt.com.br)** · 👤 **[João Vitor Zanca no LinkedIn](https://www.linkedin.com/in/joaovitorzanca-qa/)**
+📄 **[Plano de Testes](docs/plano-de-testes.md)** · 📝 **[Estudo de caso](docs/estudo-de-caso.md)** · 🌐 **[Site no ar](https://zancavolt.com.br)** · 👤 **[João Vitor Zanca no LinkedIn](https://www.linkedin.com/in/joaovitorzanca-qa/)**
 
 ## Papéis
 
