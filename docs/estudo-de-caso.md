@@ -54,4 +54,24 @@ O desafio de qualidade: um site pequeno, mas que **não pode errar no contato**.
 
 ## Evidências
 
-[PREENCHER na ZV-55: prints selecionadas do Jira e do Zephyr, sem dados pessoais — quadro da sprint, ciclo de testes, caso com execução, bug com reteste]
+**Gestão no Jira:** visão geral do projeto, com os tickets por status.
+
+![Resumo do projeto no Jira com o gráfico de tickets por status](portfolio/01-jira-resumo-do-projeto.png)
+
+**Casos e execuções no Zephyr Scale:** ciclo da Sprint 0. O caso em vermelho falhou e virou o bug ZV-12; a execução fica no histórico.
+
+![Test Player do Zephyr no ciclo da Sprint 0, com casos aprovados em verde e um caso com falha em vermelho](portfolio/02-zephyr-ciclo-com-falha-e-reteste.png)
+
+**Bug encontrado e retestado (ZV-23):** o emoji da mensagem chegava quebrado no WhatsApp. Depois da correção, o reteste passou. Os dados são fictícios.
+
+![Mensagem do site no WhatsApp com o emoji quebrado, aparecendo como um símbolo de interrogação](portfolio/03-bug-emoji-quebrado-no-whatsapp.png)
+
+![A mesma mensagem depois da correção, com o emoji de polegar aparecendo certo](portfolio/04-bug-emoji-reteste-aprovado.png)
+
+**Automação achando problema real:** os 8 testes de acessibilidade (axe) falharam na CI e apontaram o botão flutuante fora das regiões da página. A correção entrou no mesmo PR.
+
+![Execução da CI no GitHub Actions com os 8 testes de acessibilidade falhando](portfolio/05-ci-acessibilidade-falhando.png)
+
+**Regressão visual automática:** na troca de fotos do portfólio, o Diff mostrou em vermelho só os 5 cartões alterados. As referências novas só foram aprovadas depois dessa conferência.
+
+![Relatório do Playwright com a diferença em vermelho apenas nos cartões do portfólio que tiveram a imagem trocada](portfolio/06-regressao-visual-diff.png)
