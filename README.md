@@ -1,8 +1,50 @@
-# ZancaVolt — Site institucional
+# ZancaVolt — Site institucional com processo completo de QA
 
-Site da **ZancaVolt**, empresa de serviços elétricos, segurança eletrônica e ar comprimido que atende **São José dos Pinhais, Curitiba e Região Metropolitana (PR)**.
+[![CI](https://github.com/joaozanca/website-zancavolt/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/joaozanca/website-zancavolt/actions/workflows/ci.yml)
+[![Fumaça em produção](https://github.com/joaozanca/website-zancavolt/actions/workflows/fumaca.yml/badge.svg?branch=producao)](https://github.com/joaozanca/website-zancavolt/actions/workflows/fumaca.yml)
+[![Quality Gate](https://sonarcloud.io/api/project_badges/measure?project=joaozanca_website-mycompany&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=joaozanca_website-mycompany)
 
-> Projeto em construção, desenvolvido em sprints com processo completo de QA.
+Site real da **ZancaVolt**, empresa de serviços elétricos, segurança eletrônica e ar comprimido de **São José dos Pinhais, Curitiba e Região Metropolitana (PR)**, no ar em **[zancavolt.com.br](https://zancavolt.com.br)**.
+
+O projeto foi conduzido como um time de verdade, em **6 sprints com Scrum, Jira e Zephyr Scale**, e é o meu projeto de portfólio como **QA**: planejei e executei os testes, registrei bugs, aprovei ou reprovei cada entrega e defini os testes automatizados que protegem o site em todo Pull Request.
+
+📄 **[Plano de Testes](docs/plano-de-testes.md)** · 🌐 **[Site no ar](https://zancavolt.com.br)**
+
+## Papéis
+
+| Papel | Quem | O que fez |
+|---|---|---|
+| **QA** | João Vitor Zanca | Planejamento e estratégia de testes, casos e execuções no Zephyr, testes em aparelhos reais, bugs, regressão, aprovação de cada entrega e definição dos cenários automatizados |
+| **PO / dono do site** | João Vitor Zanca | Prioridades, critérios de aceite e decisões de produto e de visual |
+| **DEV** | IA (Claude) | Código do site e dos testes automatizados, escrito a pedido do QA, a partir dos cenários que ele definiu |
+
+## O projeto em números
+
+| | |
+|---|---|
+| Sprints | 6 (Sprint 0 a 5), de 15/10 a 16/11/2026 |
+| Pull Requests | Mais de 40, todos com CI, preview e aprovação do QA |
+| Testes automatizados | **23 em todo PR** (4 E2E, 8 de acessibilidade, 3 de fumaça e 8 de regressão visual) + 3 de fumaça contra o site no ar a cada publicação |
+| Casos de teste manuais | ZV-T1 a ZV-T95 no Zephyr Scale, em 6 ciclos (um por sprint) |
+| Bugs registrados | 4 no Jira, todos com decisão registrada; outros achados corrigidos no próprio card |
+| Performance no celular | Lighthouse **93** (era 75) |
+| Segurança | Nota **A+** no securityheaders.com |
+
+## Destaques de QA
+
+- **A regressão visual automática pegou a mudança certa:** na troca de fotos do portfólio, o teste apontou exatamente os 5 cartões alterados, e as referências só foram aprovadas depois da conferência do Diff.
+- **Um teste que deixava passar defeito foi corrigido:** com tolerância de 0,1%, a logo com o Z em azul passava no teste visual; a tolerância virou no máximo 50 pixels.
+- **Aparelho real achou o que o simulador não mostra:** o selo da hospedagem cobria o botão do WhatsApp no celular, e o Samsung Internet escurecia o site no modo escuro.
+- **Acessibilidade automática achou problema real:** o axe mostrou o botão flutuante fora das regiões da página para leitores de tela.
+- **Teste instável investigado antes de ser mexido:** 20 execuções seguidas mostraram que a falha era da hospedagem, não do site nem do teste.
+- **Bug tratado na causa:** o build que falhava ao baixar a fonte do Google passou a usar fontes guardadas no próprio site.
+
+## Como o trabalho foi organizado
+
+- **Jira:** sprints de uma semana, cards com critérios de aceite, bugs vinculados e revisão no fim de cada sprint.
+- **Zephyr Scale:** casos de teste por card, um ciclo por sprint, execuções com evidências e reteste dos bugs.
+- **GitHub:** cada card em uma branch e um Pull Request com a CI verde; merge só depois da aprovação do QA.
+- **Ambientes:** preview por PR (onde o QA testa), homologação da `main` e produção publicada por release.
 
 ## Tecnologias
 
@@ -114,8 +156,8 @@ src/
   config/site.ts     Dados da empresa: telefone, WhatsApp, e-mail, região, serviços
   lib/               Funções utilitárias
 public/              Imagens, ícones e arquivos servidos como estão
-tests/               Testes automatizados (E2E e acessibilidade)
-docs/                Documentação do projeto e de QA
+tests/               Testes automatizados (E2E, acessibilidade, fumaça e regressão visual)
+docs/                Plano de Testes e design system
 ```
 
 ## Variáveis de ambiente
