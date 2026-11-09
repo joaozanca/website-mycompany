@@ -54,7 +54,7 @@ O desafio de qualidade: um site pequeno, mas que **não pode errar no contato**.
 
 ## Evidências
 
-**Gestão no Jira:** visão geral do projeto, com os tickets por status.
+**Gestão no Jira:** visão geral do projeto no fim da Sprint 5, com os tickets por status.
 
 ![Resumo do projeto no Jira com o gráfico de tickets por status](portfolio/01-jira-resumo-do-projeto.png)
 
