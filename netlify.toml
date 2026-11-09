@@ -1,5 +1,5 @@
-# Configuração da Netlify: publica a main em zancavolt.com.br (produção) e gera um preview do site
-# para cada Pull Request (ZV-33).
+# Configuração da Netlify: publica a branch producao em zancavolt.com.br (produção, ZV-50) e gera um
+# preview do site para cada Pull Request e para a main (ZV-33).
 [build]
   command = "npm run build"
   publish = "out"

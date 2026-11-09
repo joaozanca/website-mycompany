@@ -67,9 +67,28 @@ Todo Pull Request para a `main` passa pelo GitHub Actions ([.github/workflows/ci
 
 ### Publicação e preview por Pull Request (Netlify)
 
-Cada PR ganha um site de teste publicado na Netlify, com o link no próprio PR (`deploy-preview-<número>--website-zancavolt.netlify.app`). É nele que o QA testa e contra ele rodam os testes E2E da CI. A configuração fica em [netlify.toml](netlify.toml). Cada merge na `main` publica o site automaticamente em [zancavolt.com.br](https://zancavolt.com.br) (produção).
+Cada PR ganha um site de teste publicado na Netlify, com o link no próprio PR (`deploy-preview-<número>--website-zancavolt.netlify.app`). É nele que o QA testa e contra ele rodam os testes E2E da CI. A configuração fica em [netlify.toml](netlify.toml).
 
 O merge na `main` só é liberado com todos os jobs verdes. O Dependabot abre PRs de atualização de dependências toda segunda-feira.
+
+#### Publicação no site (branch `producao`)
+
+O site em [zancavolt.com.br](https://zancavolt.com.br) é publicado **só a partir da branch `producao`**, e não a cada merge na `main`. Cada publicação gasta créditos do plano grátis da Netlify (15 de 300 por mês); previews e a `main` não gastam (ZV-50).
+
+| Branch | O que a Netlify faz |
+|---|---|
+| PR para `main` | Preview do PR (`deploy-preview-<número>--…`) |
+| `main` | Site de homologação em `main--website-zancavolt.netlify.app` (não é o domínio) |
+| `producao` | Publica em zancavolt.com.br e dispara o teste de fumaça em produção |
+
+Para publicar (normalmente no fim da sprint, junto com a release):
+
+1. Abra um PR da `main` para a `producao` (título: `release: vX.Y.Z`).
+2. Espere a CI verde e confira o preview do PR.
+3. Faça o merge com **Create a merge commit** (não use squash: a `producao` precisa ter os mesmos commits da `main`).
+4. O workflow "Fumaça em produção" espera o commit entrar no ar e roda os testes de fumaça contra o domínio.
+
+Numa urgência (ex.: telefone errado no site), corrija pela `main` como sempre e faça o mesmo PR para a `producao` logo em seguida.
 
 ### Padrão de commit
 
